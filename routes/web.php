@@ -2,7 +2,7 @@
 
 //public group routes
 
-Route::group(['middleware' => 'web'], function(){
+Route::group([], function(){
 
     Route::match(['get','post'],'/',['uses' => 'IndexController@execute', 'as' => 'home']);
     Route::get('/page/{alias}',['uses' => 'PageController@execute','as' => 'page' ]);
@@ -27,7 +27,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         //admin/pages/edit
         Route::match(['get','post','delete'],'/edit/{page}',['uses' => 'PageEditController@execute', 'as' => 'pageEdit']);
     });
-
     //work with portfolios
     Route::group(['prefix' => 'portfolios'], function() {
         //main list portfolios
