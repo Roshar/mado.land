@@ -23,5 +23,5 @@
             {{session('status')}}
         </div>
     @endif
-    @if()
+    
 </header>
